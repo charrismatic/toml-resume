@@ -1,0 +1,14 @@
+{{#if resume.work}}
+<section class="section resume_section work_experience experiences-section">
+  <h2 class="section__title section-title">Work Experience</h2>
+  {{#resume.work}}
+  {{#if display ~}}
+  <div class="job job_item item">
+
+    {{> _experience_item }}
+
+  </div>
+  {{/if}}
+  {{/resume.work}}
+</section>
+{{/if}}

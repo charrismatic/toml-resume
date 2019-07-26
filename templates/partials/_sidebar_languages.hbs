@@ -1,0 +1,12 @@
+{{#if resume.languages ~}}
+{{#resume.languages}}
+{{#if display ~}}
+<section class="sidebar__block languages_section">
+  <h2 class="block__title">Languages</h2>
+  <ul class="list-unstyled languages-list">
+      <li>{{language}} <span class="lang-desc">({{fluency}})</span></li>
+  </ul>
+</section>
+{{/if ~}}
+{{/resume.languages}}
+{{/if ~}}

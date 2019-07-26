@@ -1,0 +1,43 @@
+{
+  "name": "toml-resume",
+  "version": "1.0.0",
+  "description": "use Toml file and command line tools to build your resume",
+  "author": "Matt Harris",
+  "keywords": [
+    "resume",
+    "document-tools",
+    "toml",
+    "templating"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/charrismatic/toml-resume.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/charrismatic/toml-resume/issues"
+  },
+  "homepage": "https://charrismatic.github.io/toml-resume",
+  "scripts": {
+    "start": "npm run sync && npm run templates:dev & npm run styles:dev & npm run serve",
+    "build": "./run/build",
+    "clean": "./run/clean",
+    "deploy": "./run/deploy",
+    "sync": "./run/sync-assets",
+    "serve": "./run/serve",
+    "styles": "./run/styles",
+    "styles:dev": "./run/styles-dev",
+    "styles:lint": "./run/styles-lint",
+    "templates": "./run/templates",
+    "templates:dev": "./run/templates-dev",
+    "meta:bump": "npm version patch -m \"Increasing npm package version v%s\"",
+    "meta:release": "npm version patch -m \"Release: %s\"",
+    "env": "env | sort | grep npm"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "handlebars": "^4.0.11",
+    "nodemon": "^1.19.1",
+    "toml": "^3.0.0"
+  }
+}

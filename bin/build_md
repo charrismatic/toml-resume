@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# EXAMPLE COMMAND SHOWING HOW WE CAN BUILD CLI OPTIONS IN USING ENVIRONMENT VARIABLES
+
+
+RESUME_ENV_DEBUG="true" RESUME_ENV="{\"console_output\":true, \"format\":\"md\"}" node index.js

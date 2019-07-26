@@ -1,0 +1,212 @@
+# BASIC INFORMATION
+# -----------------
+# NAME AND CONTACT INFOMATION
+[basics]
+  name =        "Job"
+  firstname =   "Job"
+  lastname =    "Seeker"
+  tagline =     "title or job description"
+  image =       ""
+  email =       "jr@email.com"
+  phone =       "123.456.7890"
+  website =     "https://some-webbsite"
+  summary =     """\
+                Write a two or three sentence introduction about yourself and the job you would like to apply for  \
+                you can put a \ at the end of a line here to start a new line.
+                """
+
+  # SOCIAL MEDIA PROFILES
+  # ---------------------
+  # INCLUDE LINKS TO LINKEDIN, TWITTER, INSTAGRAM, OR
+  # PERSONAL/PROFESSIONAL WEBSITES
+  [[basics.profiles]]
+    network =      "sitename"
+    username =     "user_name"
+    url =          "https://link-if-they-click"
+    shorturl =     "shorter-name"
+
+  [[basics.profiles]]
+    network =      "LinkedIn"
+    username =     "user_name"
+    url =          "https://link-if-they-click"
+    shorturl =     "/shorter-name"
+
+  #  [[basics.profiles]]
+  #    network =      "title"
+  #    username =     "name to show"
+  #    url =          "https://link-if-they-click"
+  #    shorturl =     "shorter.version"
+
+
+# YOUR ADDRESS
+[address]
+  street =         "123 Street St. #321"
+  postalCode =     "47901"
+  city =           "Moon"
+  state =          "Space"
+  countryCode =    "America"
+
+# LANGUAGE THAT YOU SPEAK
+[[languages]]
+  # YOU CAN CHOSE TO SHOW THIS OR NOT WITH TRUE/FALSE
+  display =        false
+  language =       "English"
+  fluency =        "Native speaker"
+
+# PROFESSIONAL INTERESTS/HOBBIES
+# ----------------------
+# ADD THINGS HERE THAT MAY BE RELEVANT TO THE JOB YOU ARE APPLYING TO
+# EXAMPLE: IF YOU ARE APPLYING TO A POSITION AS A WELDER YOU COULD LIST SPECIFIC TYPES OF
+# WELDING YOU ARE MOST INTERESTED IN DOING AT YOUR JOB
+[[interests]]
+  # YOU CAN CHOSE TO SHOW THIS OR NOT WITH TRUE/FALSE
+  display =        false
+  name =           "topic 1, topic 2, topic 3, topic 4, topic 5"
+  keywords =       []
+
+
+# EDUCATION HISTORY
+# -----------------
+[[education]]
+  # YOU CAN CHOSE TO SHOW THIS ITEM OR NOT WITH TRUE/FALSE
+  display =        true
+  institution =    "Life University"
+  area =           "<Please pick only one>"
+  school =         "School of Loans"
+  studyType =      "Bachelors"
+  startDate =      "2013-02-01"
+  endDate =        "2015-08-01"
+
+[[education]]
+  display =        true
+  institution =    "ABC High School"
+  area =           "Topic"
+  studyType =      "degree"
+  startDate =      "2010-06-01"
+  endDate =        "2013-02-01"
+  gpa =            ""
+  courses =        []
+
+[[education]]
+  display =        true
+  institution =    "Professional certifications"
+  area =           "Topic"
+  studyType =      "title"
+  startDate =      "2010-06-01"
+  endDate =        "2013-02-01"
+  gpa =            ""
+  courses =        []
+
+# WORK HISTORY
+[[work]]
+  display =        true
+  name =           "Company Name"
+  url =            "company-website.com"
+  location =       "location"
+  position =       "position title"
+  startDate =      "2018-12-15"
+  endDate =        "2019-07-01"
+  summary =        "single sentence "
+  highlights =   [
+    "Add some highlights 1",
+    "Add some highlights 2",
+    "Add some highlights 3",
+  ]
+
+
+[[work]]
+  display =        true
+  name =           "Company Name"
+  url =            "company-website.com"
+  location =       "location"
+  position =       "position title"
+  startDate =      "2018-12-15"
+  endDate =        "2019-07-01"
+  summary =        "single sentence "
+  highlights =   [
+    "Add some highlights 1",
+    "Add some highlights 2",
+    "Add some highlights 3",
+  ]
+
+# JUST KEEP ADDING THESE SECTIONS TO ADD MORE JOBS
+# ------------------------------------------------
+# [[work]]
+#   display =        true
+#   name =           "Company Name"
+#   url =            "company-website.com"
+#   location =       "location"
+#   position =       "position title"
+#   startDate =      "2018-12-15"
+#   endDate =        "2019-07-01"
+#   summary =        "single sentence "
+#   highlights =   [
+#     "Add some highlights 1",
+#     "Add some highlights 2",
+#     "Add some highlights 3",
+#   ]
+
+
+# IF YOU NEED A SECOND PAGE TO ADD WORK HISTORY
+[[work2]]
+  display =        true
+  name =           "Company Name"
+  url =            "company-website.com"
+  location =       "location"
+  position =       "position title"
+  startDate =      "2018-12-15"
+  endDate =        "2019-07-01"
+  summary =        "single sentence "
+  highlights =   [
+    "Add some highlights 1",
+    "Add some highlights 2",
+    "Add some highlights 3",
+  ]
+
+[[work2]]
+  display =        true
+  name =           "Company Name"
+  url =            "company-website.com"
+  location =       "location"
+  position =       "position title"
+  startDate =      "2018-12-15"
+  endDate =        "2019-07-01"
+  summary =        "single sentence "
+  highlights =   [
+    "Add some highlights 1",
+    "Add some highlights 2",
+    "Add some highlights 3",
+  ]
+
+# DO YOU HAVE SOME AWARDS
+[[awards]]
+  display =      false
+  title =        ""
+  date =         ""
+  awarder =      ""
+  summary =      ""
+
+# A LIST OF PROJECTS THAT ARENT TECHNICALLY JOBS
+[[projects]]
+  name =         "project name"
+  url =          "does-it-have-a-website.com"
+  description =  "a description of that thing"
+
+[[projects]]
+  name =         "project name b"
+  url =          "does-it-have-a-website.com"
+  description =  "a description of that thing"
+
+[[projects]]
+  name =         "project name b"
+  url =          "does-it-have-a-website.com"
+  description =  "a description of that thing"
+
+[[projects]]
+  name =         "project name b"
+  url =          "does-it-have-a-website.com"
+  description =  "a description of that thing"
+
+[[references]]
+  name =         ""
+  reference =    ""

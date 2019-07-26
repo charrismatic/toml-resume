@@ -1,0 +1,24 @@
+#!/bin/bash
+
+BASE_DIR="$(npm prefix)"
+# source $BASE_DIR/.env
+# NODEMON_CFGDIR="conf/nodemon"
+# nodemon --config ${BASE_DIR}/${DEV_DIR}/${NODEMON_CFGDIR}/up.json
+# echo -e "\n\nwith RUN_FLAGS $RUN_FLAGS\n\n"
+
+RUNNODE_FLAGS="--verbose $RUN_FLAGS"
+RUNSCRIPT_FLAGS=""
+
+# OPTIONS
+# echo -e "\n\nwith RUN_FLAGS $RUN_FLAGS\n\n"
+# RESUME_ENV_DEBUG='true'
+
+NODE_ENV=development nodemon --cwd "${BASE_DIR}" \
+    --watch lib/ \
+    --watch templates/ \
+    --watch data/ \
+    --ignore node_modules \
+    --ext js,toml,json,hbs \
+    --delay 1 \
+    --verbose \
+    --exec node ${RUNNODE_FLAGS} index.js ${RUNSCRIPT_FLAGS}

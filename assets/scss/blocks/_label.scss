@@ -1,0 +1,37 @@
+$item_label_color      : $theme_secondary;
+$item_label_wt         : $text_light;
+$item_label_size       : $text_sm;
+$item_label_bg         : $transparent;
+
+.job__role {
+  position: relative;
+  display: inline-block;
+  display: flex;
+}
+
+.label {
+  align-items: baseline;
+  background: $item_label_bg;
+  color: $item_label_color;
+  display: flex;
+  font-size: $item_label_size;
+  font-weight: $item_label_wt;
+  height: ($item_label_size * 1.2);
+  margin: 0;
+
+  &::before {
+    content: attr(data-label);
+    background: inherit;
+    border-radius: 1px;
+    border: 1px solid currentColor;
+    color: inherit;
+    display: block;
+    font-size: inherit;
+    font-weight: inherit;
+    height: 100%;
+    line-height: 1;
+    margin: 0 0 0 .5em;
+    padding: 1px 2px 2px 2px;
+    text-transform: lowercase;
+  }
+}

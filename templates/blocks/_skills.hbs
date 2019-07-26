@@ -1,0 +1,19 @@
+{{#if resume.skills}}
+<section class="skill_section section">
+  <div class="container">
+  <h2 class="section__title mb-1">Skillsets &amp; Interests</h2>
+    <div class="skill-table">
+    {{#resume.skills}}
+      <div class="skill">
+        <h3 class="skill__title">{{name}}</h3>
+        <div class="skill__level">
+          <div class="levelbar proficiency_bar " style="width:{{skillLevel proficiency}};"></div>
+          {{!-- <div class="levelbar interest_bar" style="width:{{skillLevel interest}};"></div> --}}
+          <div class="levelbar indicator_bar"></div>
+        </div>
+      </div>
+    {{/resume.skills}}
+    </div>
+  </div>
+</section>
+{{/if}}

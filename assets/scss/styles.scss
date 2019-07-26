@@ -1,0 +1,38 @@
+
+// THIRD PARTY LIBRARIES
+@import 'vendor/fontawesome';
+
+// STYLE LIBRARY
+@import 'charrismatic/colors/index';
+@import 'charrismatic/format/index';
+@import 'charrismatic/fonts/index';
+@import 'charrismatic/flex/index';
+@import 'charrismatic/effects/index';
+
+// VARIABLE DEFINITIONS
+@import "defs/colors";
+@import "defs/fonts";
+@import "defs/typography";
+
+/// THEME CONFGURATION
+@import "theme/colors";
+@import "theme/functions";
+@import "theme/mixins";
+@import "theme/fonts";
+@import "theme/typography";
+@import "theme/layout";
+
+// STYLESHEET BASE
+@import "theme/base";
+
+// BLOCK COMPONENTS
+@import "blocks/label";
+@import "blocks/group";
+@import "blocks/profile";
+@import "blocks/sidebar";
+@import "blocks/section";
+@import "blocks/job";
+@import "blocks/skill";
+
+// TESTING OR TEMPORARY/SINGLE USE CLASSES
+@import "overrides";

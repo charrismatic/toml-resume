@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# BASE_DIR="$(npm prefix)"
+# source $BASE_DIR/.env
+
+TEMPLATE_FORMAT="${1:-html}"
+
+RUN_FLAGS=
+RUN_SCRIPT_FLAGS=""
+
+RUNTITLE="NodeResume"
+RUN_NODE_FLAGS="--title=$RUNTITLE $RUN_FLAGS"
+
+# EXPORT TXT
+# -----------------------------------------------------------------------------
+if [ "$TEMPLATE_FORMAT" == "txt" ]; then
+  RESUME_ENV="{\"console_output\":false, \"format\":\"txt\",\"export_file\":\"resume.txt\"}"
+
+# EXPORT MD
+# -----------------------------------------------------------------------------
+elif [ "$TEMPLATE_FORMAT" == "md" ]; then
+  RESUME_ENV="{\"console_output\":false, \"format\":\"md\",\"export_file\":\"resume.md\"}"
+
+# EXPORT PDF+HTML
+# -----------------------------------------------------------------------------
+elif [ "$TEMPLATE_FORMAT" == "pdf" ]; then
+  RESUME_ENV="{\"console_output\":false, \"format\":\"html\",\"export_file\":\"resume.html\"}"
+
+# EXPORT HTML
+# -----------------------------------------------------------------------------
+else
+
+  # IF INPUT WAS GIVEN AND IS INCORRECT DISPLAY MESSAGE
+  [[ ! -z $TEMPLATE_FORMAT ]] && [[ "$TEMPLATE_FORMAT" != "html" ]] && \
+    echo "WARN: Type $TEMPLATE_FORMAT is not input was not a valid template type"
+
+  RESUME_ENV="{\"console_output\":false, \"format\":\"html\",\"export_file\":\"index.html\"}"
+
+fi
+
+# MAIN
+# -----------------------------------------------------------------------------
+RESUME_ENV_DEBUG=
+
+RESUME_ENV=${RESUME_ENV} \
+RESUME_ENV_DEBUG=$RESUME_ENV_DEBUG \
+RUNNODE_ENV='' \
+ node "${RUN_NODE_FLAGS}" index.js ${RUN_SCRIPT_FLAGS}
+
+
+
+if [ "$TEMPLATE_FORMAT" == "pdf" ]; then
+  cd .public
+  google-chrome --headless --disable-gpu --print-to-pdf index.html
+fi

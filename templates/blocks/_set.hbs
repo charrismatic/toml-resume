@@ -1,0 +1,16 @@
+{{#if class ~}}
+  <div class="set_container {{class}}">
+{{#else ~}}
+  <div class="set_container">
+{{/if ~}}
+{{#if title ~}}
+      <h3 class="set__title">{{title}}</h3>
+{{/if ~}}
+{{#if description ~}}
+    <p>{{description}}</p>
+{{/if ~}}
+{{#if items ~}}
+    <ul class="set__list">
+    {{#each item ~}}<li class="set__item">{{this}}</li>{{/each ~}}
+    </ul>
+{{/if ~}}

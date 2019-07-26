@@ -1,0 +1,30 @@
+<div class="job__details job__header meta">
+  {{#if name }}
+  <div class="job__company company">
+      {{#if url ~}}<a class="job__url" href="https://{{url}}" target="_blank">{{/if ~}}
+      <span>{{~ name ~}}</span>
+      {{#if url ~}}</a>{{/if ~}}
+  </div>
+  {{/if ~}}
+  <div class="company__summary job__introduction">{{ summary }}</div>
+  <div class="job__date time">{{year startDate}} - {{year endDate}}</div>
+</div>
+<div class="section__content details">
+  {{#if position}}
+    <h3 class="job__title job-title">{{position}}</h3>
+  {{/if}}
+  {{#if roles}}
+  {{#each roles}}
+
+    {{> _experience_item_role }}
+
+  {{/each}}
+  {{/if}}
+  {{#if highlights}}
+    <ul class="job__highlights highlight_list">
+  {{#each highlights}}
+      <li class="highlight_item">{{this}}</li>
+  {{/each}}
+    </ul>
+  {{/if ~}}
+</div>

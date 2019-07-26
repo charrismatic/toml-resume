@@ -1,0 +1,17 @@
+#!/bin/bash
+
+BASE_DIR="$(npm prefix)"
+BUILD_TIME="$(date +'%Y%m%d%H%M%S')"
+
+[[ ! -d .build ]] && mkdir .build
+
+$BASE_DIR/run/sync-assets
+$BASE_DIR/run/templates txt
+$BASE_DIR/run/templates md
+$BASE_DIR/run/templates html
+$BASE_DIR/run/styles
+
+mv .public ".build/$BUILD_TIME"
+mkdir .public
+
+exit 0

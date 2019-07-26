@@ -1,0 +1,202 @@
+$sidebar_xl                          : 1.2rem;
+$sidebar_lg                          : 1.1rem;
+$sidebar_md                          : 0.9rem;
+$sidebar_sm                          : 0.8rem;
+$sidebar_text_xl                     : 1.2rem;
+$sidebar_text_lg                     : 1.1rem;
+$sidebar_text_md                     : 0.9rem;
+$sidebar_text_sm                     : 0.8rem;
+$sidebar_section_content_lh          : 1.7;
+$sidebar_section_title_fw            : $fw_300;
+$sidebar_section_content_fw          : $fw_300;
+
+$sidebar_banner_name_font            : $logo_font;
+$sidebar_banner_name_fs              :  3.4rem;
+$sidebar_banner_name_wt              : $text_normal;
+$sidebar_banner_tagline_fs           : 1.5rem;
+$sidebar_banner_tagline_spacing      : -.5px;
+$sidebar_banner_tagline_wt           : $text_normal;
+
+$sidebar_title_label_border          : 1px dashed;
+
+$sidebar_bg                          : desaturate(darken($theme_primary, 5%), 15%);
+$sidebar_color                       : #c6dacd;
+$sidebar_muted_color                 : lighten($color-secondary-1-1, 0%);
+
+$sidebar_banner_name_color           : $color-complement-2;
+$sidebar_banner_tagline_color        : $color-primary-1;
+$sidebar_title_color                 : $sidebar_muted_color;
+
+$sidebar_contact_card_bg             : $white;
+$sidebar_contact_card_color          : $capecod;
+$sidebar_contact_card_icon_color     : rgba(lighten($capecod, 5%), 0.8);
+$sidebar_header_subtitle_bg          : $transparent;
+$sidebar_title_label_bg              : $transparent;
+$sidebar_banner_tagline_bg           : $transparent;
+
+
+.sidebar {
+  color: $sidebar_color;
+  background: $sidebar_bg;
+  font-size: $sidebar_text_md;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+
+  &__block {
+    flex: 1 1 auto;
+    padding: 0 2em;
+    line-height: $sidebar_section_content_lh;
+    font-weight: $sidebar_section_content_fw;
+  }
+
+
+  .block__title {
+    text-transform: uppercase;
+    font-size: $sidebar_text_lg;
+    font-weight: $sidebar_section_title_fw;
+    color: $sidebar_muted_color;
+    width: 100%;
+
+    &.tagged {
+      font-size: $sidebar_text_md;
+      border: 1px dashed;
+      display: inline-block;
+      font-weight: $fw_400;
+      width: 100%;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      margin-left: -.2rem;
+      padding-left: .2rem;
+      padding-right: 0;
+      text-transform: lowercase;
+      padding-bottom: 2px;
+    }
+  }
+
+  .banner_section {
+    display: flex;
+    flex-grow: 0;
+    padding-top: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 1rem;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tagline_section {
+    display: flex;
+    padding-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .contact_list,
+  .languages-list,
+  .interests-list {
+    margin-bottom: 0;
+
+    li {
+      margin-bottom: 10px;
+      &:last-child { margin-bottom: 0; }
+    }
+  }
+
+  .banner {
+    &__name {
+      font-size: $sidebar_banner_name_fs;
+      font-family: $sidebar_banner_name_font;
+      font-weight: $sidebar_banner_name_wt;
+      color: $sidebar_banner_name_color;
+    }
+
+    &__tagline {
+      color: $sidebar_banner_tagline_color;
+      font-weight: $sidebar_banner_tagline_wt;
+      font-size: $sidebar_banner_tagline_fs;
+      letter-spacing: $sidebar_banner_tagline_spacing;
+    }
+    &__img { max-width: 100%; }
+  }
+
+  .contact_list {
+    list-style: none;
+    font-family: $heading_font_secondary;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+
+    .list {
+      &_item {
+        color: inherit;
+        font-family: inherit;
+        margin-bottom: $spacing_third;
+        font-size: $text_default;
+
+        &:last-child { margin-bottom: 0; }
+      }
+
+      &__icon {
+        margin-right: $spacing_half;
+        font-size: 1rem;
+      }
+
+      &__link {
+        font-family: inherit;
+        text-decoration: none;
+        font-size: .85rem;
+        color: inherit;
+        letter-spacing: 1.5px;
+      }
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      letter-spacing: 0;
+      font-family: monospace;
+    }
+  }
+
+  .education {
+    &__item {
+      margin-bottom: $spacing_full;
+      &:last-child { margin-bottom: 0; }
+
+      .eduitem {
+        &__degree {
+          font-weight: 400;
+          line-height: 1.3;
+          margin-bottom: $spacing_half;
+          font-size: $sidebar_text_md;
+          color: $sidebar_color;
+        }
+
+        &__info {
+          display: flex;
+          color: $sidebar_muted_color;
+          font-size: $sidebar_text_sm;
+          margin: 0.5em 0;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        &__meta {
+          margin: 0;
+          color: inherit;
+          font-weight: 400;
+        }
+
+        &__time {
+          margin: 0;
+          font-weight: 300;
+          color: inherit;
+        }
+      }
+    }
+  }
+}

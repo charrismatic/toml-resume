@@ -1,0 +1,36 @@
+{{#resume.basics}}
+<section class="sidebar__block contact_section ">
+  <h2 class="block__title tagged">Contact</h2>
+  <ul class="list-unstyled contact_list">
+    {{#if email}}
+    <li class="list_item email">
+      <i class="list__icon fa fa-envelope"></i>
+      <a class="list__link" href="mailto:{{email}}"><span class='contact-label'>em</span>: {{email}}</a>
+    </li>
+    {{/if}}
+    {{#if phone}}
+    <li class="list_item phone">
+      <i class="list__icon fa fa-phone"></i>
+      <a class="list__link" href="tel:{{phone}}"><span class='contact-label'>tel</span>: {{phone}}</a></li>
+    {{/if}}
+    {{#if website}}
+    <li class="list_item website">
+      <i class="list__icon fa fa-globe"></i>
+      <a class="list__link" href="https://{{website}}" target="_blank"><span class='contact-label'>www</span>:/{{displayUrl website}}</a></li>
+    {{/if}}
+    {{#each profiles}}
+    <li class="list_item {{toLowerCase network}}">
+      <i class="list__icon fa fa-{{toLowerCase network}}"></i>
+      <a class="list__link" href="https://{{url}}" target="_blank">
+      {{#if shorturl}}{{shorturl}}
+      {{else~}}
+        {{#if url}}{{displayUrl url}}
+        {{else}}@{{username}}
+        {{/if}}
+      {{/if}}
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</section>
+{{/resume.basics}}

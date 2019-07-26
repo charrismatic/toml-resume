@@ -1,0 +1,15 @@
+{{#if resume.projects ~}}
+<!-- START PUBLICATIONS -->
+<section class="section project_section" style="font-size:.8rem">
+  <h2 class="section__title depth-1 mb-2">Projects</h2>
+  {{#resume.projects}}
+  {{#if display ~}}
+  <div class="project_container" style="display: flex; flex-wrap: wrap; ">
+    <div class="project item" style="display:block; flex: 1 0 50%;">
+      <span class="project__title">- {{name}} {{url}}</span>
+    </div>
+  </div>
+  {{/if}}
+  {{/resume.projects}}
+</section>
+{{/if}}

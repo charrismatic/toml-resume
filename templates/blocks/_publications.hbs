@@ -1,0 +1,24 @@
+{{#if resume.publications}}
+{{!-- START PUBLICATIONS --}}
+<section class="section publications_section">
+  <div class="group_container publications_group">
+    <h2 class="section__title mb-2">Awards &amp; Publications</h2>
+    <ul class="group group_list">
+      {{#resume.publications}}
+      {{#if display}}
+      <li class="group_item">
+        <h3>
+          {{#if event}}<span class="item__event">{{event}}</span>{{/if}}
+          {{#if title}}<span class="item__title">'{{title}}'</span>{{/if}}
+          {{#if type}}<span class="item__type">{{type}}</span>{{/if}}
+          {{#if location}}<span class="item__location">{{location}}</span>{{/if}}
+          {{#if date}}<span class="item__date">{{date}}</span>{{/if}}
+        </h3>
+      </li>
+      {{/if}}
+      {{/resume.publications}}
+    </ul>
+  </div>
+</section>
+{{!-- END PUBLICATIONS --}}
+{{/if}}

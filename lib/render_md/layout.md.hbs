@@ -1,0 +1,49 @@
+---
+date:
+name:
+meta:
+---
+{{#resume ~}}
+# {{basics.name}}
+
+## {{address.city}}, {{address.state }}
+
+{{basics.summary}}
+
+## Work
+
+{{#work}}
+
+- ### {{position}} {{name}}
+  {{url}}
+  {{startDate}} - {{endDate}}
+  {{summary}}
+  {{#highlights}}
+  * {{.}}
+  {{/highlights}}
+{{/work}}
+
+## Education
+{{#education}}
+
+- ### {{name}}
+  {{startDate}} - {{endDate}}
+  {{area}}
+{{/education}}
+
+{{#if publications}}
+## Presentations & Publications
+
+{{#publications}}
+
+  {{#if display ~}}
+- ### {{#if event}}{{event}}{{/if ~}}
+    {{#if title}} '{{title}}' {{/if ~}}
+    {{#if type}}- {{type}} {{/if ~}}
+    {{#if location}}{{location}}{{/if ~}}
+    {{#if date}} \[{{date}}\] {{/if}}
+  {{/if}}
+{{/publications}}
+{{/if}}
+
+{{/resume}}

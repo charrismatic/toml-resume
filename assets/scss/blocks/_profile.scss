@@ -1,0 +1,43 @@
+$profile_name_color: $title_color;
+$profile_name_font: $logo_font;
+$profile_name_wt: $text_normal;
+$profile_name_fs:  3.4rem;
+
+$profile_tagline_fontsize  : $secondary_text_xl;
+$profile_tagline_font: inherit;
+$profile_tagline_wt: $text_normal;
+
+$profile_tagline_bg        : $transparent;
+$profile_tagline_color     : $rhino;
+
+.sidebar {
+  .profile-container {
+    display: flex;
+    flex-grow: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
+  .profile {
+    &__name {
+      font-size: $profile_name_fs;
+      color: $profile_name_color;
+      font-family: $profile_name_font;
+      font-weight: $profile_name_wt;
+    }
+
+    &__tagline {
+      font-family: $profile_tagline_font;
+      font-weight: $profile_tagline_wt;
+      font-size: $profile_tagline_fontsize;
+      background: $profile_tagline_bg;
+      color: $profile_tagline_color;
+    }
+
+    &__img {
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{{#if resume.awards ~}}
+  {{#resume.awards ~}}
+  {{#if display ~}}
+<section class="section experiences-section">
+  <h2 class="section-title">Awards</h2>
+  <div class="item">
+      <div class="meta">
+          <div class="upper-row">
+              <h3 class="job-title">{{title}}</h3>
+              <div class="time">{{year date}}</div>
+          </div>
+          <div class="company">{{#if url}}<a href="{{url}}" target="_blank">{{/if}}{{awarder}}{{#if url}}</a>{{/if}}</div>
+      </div>
+      <div class="details">
+          {{summary}}
+      </div>
+  </div>
+</section>
+  {{/if ~}}
+  {{/resume.awards ~}}
+{{/if ~}}

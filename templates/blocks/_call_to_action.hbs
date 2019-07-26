@@ -1,0 +1,21 @@
+{{#if resume.call_to_action}}
+  {{#resume.call_to_action ~}}
+<section class="section calltoaction_section">
+  <h2 class="section__title">Note:</h2>
+  {{#if content}}
+    <div class="section__content highlighted font-light">
+    {{#each content}}
+      <p class="fs-2">{{this}}</p>
+    {{/each}}
+    </div>
+  {{/if}}
+  <p class="text-right cl-black">
+    <i class="fa fa-github"></i>
+    {{#if link_url}}
+    <a class="calltoaction_link" href="https://{{link_url}}" target="_blank">{{link_text}}</a>
+    {{/if}}
+  </p>
+
+</section>
+  {{/resume.call_to_action ~}}
+{{/if}}

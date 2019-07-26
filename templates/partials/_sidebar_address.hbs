@@ -1,0 +1,21 @@
+{{#if resume.address}}
+{{#resume.address}}
+<section class="sidebar__block location_section ">
+  <div class="location">
+    <h2 class="block__title tagged">Location</h2>
+    <div class="flex">
+      <div class="address">
+        <div class="address_row">
+          {{#if street}}<span class="street">{{street}}</span>{{/if}}
+        </div>
+        <div class="address_row">
+          {{#if city}}<span class="city">{{city}}</span>{{/if}}
+          {{#if state}}, <span class="state">{{state}}</span>{{/if}}
+          {{#if postalCode}}<span class="postalCode">{{postalCode}}</span>{{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{/resume.address}}
+{{/if}}

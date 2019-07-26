@@ -1,0 +1,11 @@
+#!/bin/bash
+
+BASE_DIR="$(npm prefix)"
+STYLE_SRC_PATH="assets/scss"
+
+if [ -e ${BASE_DIR}/.stylelintrc ]; then
+  stylelint --config "$BASE_DIR/.stylelintrc" $BASE_DIR/${STYLE_SRC_PATH}/**/*.scss
+else
+  echo "Project stylelint config was not found. Running stylint with default config instead"
+  stylelint $BASE_DIR/${STYLE_SRC_PATH}/**/*.scss
+fi

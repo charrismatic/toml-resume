@@ -1,0 +1,62 @@
+.group {
+  display: block;
+
+  &_list {
+    font-size: 0.8rem;
+    line-height: inherit;
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding: 0;
+    padding-left: 1em;
+  }
+
+  &_item {
+    position: relative;
+    font-size: 0.85rem;
+    line-height: 1.7;
+
+    &::before {
+      content: "○";
+      position: absolute;
+      left: -1rem;
+      top: 0;
+      display: block;
+      color: rgb(24, 156, 187);
+    }
+  }
+}
+
+.item {
+  &--inline { display: inline-block; }
+
+  &__type {
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: -1px;
+  }
+
+  &__event {
+    font-weight: 300;
+    letter-spacing: -.5px;
+  }
+
+  &__title {
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+
+  &__location {
+    font-weight: 300;
+    letter-spacing: -.5px;
+  }
+
+  &__date {
+    letter-spacing: -.5px;
+    font-weight: 300;
+  }
+}

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+BASE_DIR="$(npm prefix)"
+STYLE_SRC_FILE="styles.scss"
+STYLE_SRC_PATH="assets/scss"
+STYLE_DEST_PATH="assets/css"
+STYLE_OUTPUT_STYLE="compressed"
+SERVE_DIR=".public"
+SERVE_PATH="${BASE_DIR}/$SERVE_DIR"
+
+echo "[node-sass]
+  style_src:  ${STYLE_SRC_PATH}/${STYLE_SRC_FILE}
+  style_dest: ${SERVE_PATH}/${STYLE_DEST_PATH}
+"
+
+node-sass --output-style ${STYLE_OUTPUT_STYLE} \
+  -o ${SERVE_PATH}/${STYLE_DEST_PATH} \
+  ${BASE_DIR}/${STYLE_SRC_PATH}/${STYLE_SRC_FILE}

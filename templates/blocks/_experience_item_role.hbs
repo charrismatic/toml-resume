@@ -1,0 +1,20 @@
+{{#unless hide}}
+{{#if title}}
+{{#if ../label_roles}}
+<h4 class="job__title job__role job-title small text-small">
+  <span>{{title}}</span>
+  <i class="label" data-label="role"></i>
+</h4>
+{{else}}
+<h4 class="job__title job__role job-title small text-small">{{title}}</h4>
+{{/if ~}}
+{{/if}}
+{{#if summary}}<p>{{summary}}</p>{{/if}}
+{{#if responsibilities}}
+<ul class="job__highlights job__responsibilities highlight_list">
+  {{#each responsibilities}}
+  <li class="highlight_item">{{this}}</li>
+  {{/each ~}}
+</ul>
+{{/if ~}}
+{{/unless ~}}

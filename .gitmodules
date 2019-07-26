@@ -1,0 +1,3 @@
+[submodule "assets/scss/charrismatic"]
+	path = assets/scss/charrismatic
+	url = git@github.com:charrismatic/charrismatic-style-library.git

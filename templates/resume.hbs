@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> header }}
+</head>
+<body class="A4">
+  <!-- SINGLE A4 PAGE - FRONT -->
+  <article class="page-wrapper sheet">
+      {{> _page_front }}
+  </article>
+  <!-- END PAGE FRONT -->
+  <!-- SINGLE A4 PAGE - BACK -->
+  <article class="page-wrapper sheet">
+      {{> _page_back }}
+  </article>
+  <!-- END PAGE BACK -->
+  <!-- SINGLE A4 PAGE - BACK -->
+  <article class="page-wrapper sheet">
+      {{> _page_info }}
+  </article>
+  <!-- END PAGE BACK -->
+  <footer class="site-footer">
+  <!-- *** NON PRINTING AREA *** -->
+    {{> footer }}
+  </footer>
+</body>
+</html>

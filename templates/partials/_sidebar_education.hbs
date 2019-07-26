@@ -1,0 +1,14 @@
+{{#if resume.education}}
+<section class="sidebar__block education_section ">
+  <h2 class="block__title tagged">Education</h2>
+  {{#resume.education}}
+  <div class="education__item">
+    <h3 class="eduitem__degree">{{award studyType}} in {{area}}</h3>
+    <div class="eduitem__info">
+      <h4 class="eduitem__meta">{{institution}}</h4>
+      <div class="eduitem__time">{{year startDate}} - {{year endDate}}</div>
+    </div>
+  </div>
+  {{/resume.education}}
+</section>
+{{/if}}

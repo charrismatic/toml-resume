@@ -1,0 +1,23 @@
+#!/bin/bash
+
+BASE_DIR="$(npm prefix)"
+SERVE_ROOT=".public"
+SERVE_PATH="${BASE_DIR}/${SERVE_ROOT}"
+SERVE_PORT="5002"
+
+echo -e "[browser-sync]
+  PORT:  ${SERVE_PORT}
+  TIMER: ${SERVE_WAIT}
+  PATH:  ${SERVE_PATH}\n"
+
+# ADVANCED EXAMPLE
+# browser-sync start --server \
+#   --cwd ${SERVE_PATH} \
+#   --port ${SERVE_PORT} \
+#   --watch \
+#   --files $SERVE_PATH \
+#   --serveStatic "./"
+
+browser-sync start \
+  --watch \
+  --server ${BASE_DIR}/${SERVE_ROOT}
