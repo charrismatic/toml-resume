@@ -1,9 +1,13 @@
+.public
+.dist
+.build 
 public/
 docs/
 node_modules/
 npm-debug.log
+resume.toml
 resume.html
 resume.pdf
 resume.json
 .DS_Store
-.idea/
+
