@@ -9,13 +9,15 @@
     {{/each}}
     </div>
   {{/if}}
-  <p class="text-right cl-black">
-    <i class="fa fa-github"></i>
-    {{#if link_url}}
-    <a class="calltoaction_link" href="https://{{link_url}}" target="_blank">{{link_text}}</a>
-    {{/if}}
-  </p>
 
+    {{#if links}}
+      {{#each links}}
+  <p class="text-right cl-black">
+    <i class="fa fa-{{icon}}"></i>
+    <a class="calltoaction_link" href="https://{{url}}" target="_blank">{{text}}</a>
+  </p>
+      {{/each}}
+    {{/if}} 
 </section>
   {{/resume.call_to_action ~}}
 {{/if}}
