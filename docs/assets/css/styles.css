@@ -9169,7 +9169,7 @@ body {
   text-transform: uppercase;
   font-size: 1.1rem;
   font-weight: 300;
-  color: #7c83af;
+  color: #9fa8df;
   width: 100%;
 }
 
@@ -9233,11 +9233,11 @@ body {
   font-size: 3.4rem;
   font-family: "libre-barcode-128-text", cursive;
   font-weight: 300;
-  color: #d4a26a;
+  color: sidebar_color;
 }
 
 .sidebar .banner__tagline {
-  color: #6e91a1;
+  color: #7985d2;
   font-weight: 300;
   font-size: 1.5rem;
   letter-spacing: -0.5px;
@@ -9303,7 +9303,7 @@ body {
 
 .sidebar .education__item .eduitem__info {
   display: flex;
-  color: #7c83af;
+  color: #9fa8df;
   font-size: 0.8rem;
   margin: 0.5em 0;
   justify-content: space-between;
@@ -9350,7 +9350,7 @@ body {
 .section__content.highlighted {
   padding: 0 2em;
   background-color: #233d48;
-  color: #d4a26a;
+  color: #d4ce6a;
   border: 1px solid #d5dcdd;
 }
 
