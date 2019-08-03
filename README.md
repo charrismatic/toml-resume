@@ -3,8 +3,6 @@
 
 > use Toml file and command line tools to build your resume
 
-Version: 1.0.0
-
 Topics: [resume](https://github.com/topics/resume),  [document-tools](https://github.com/topics/document-tools),  [toml](https://github.com/topics/toml),  [templating](https://github.com/topics/templating),  
 
 Take the good parts of json-resume, the json file with your resume, and then  make it really easy to work on. No theme registry, no scheme validation, and no errors is you forget to add a comma. Supports multi-line text, commenting, and all template files are included so adding new sections and changing the order of things is easy.
