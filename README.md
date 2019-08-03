@@ -25,26 +25,33 @@ Take the good parts of json-resume, the json file with your resume, and then  ma
 ## Getting started
 
 
+
 ## Dependencies
 
+-  toml: "^3.0.0"
 -  browser-sync: "^2.26.7"
 -  handlebars: "^4.0.11"
 -  nodemon: "^1.19.1"
--  toml: "^3.0.0"
-
+ - node-sass
 
 ## Peer Dependencies
 
- - node-sass
- - stylelint
- - browser-sync
- - js-beautify
+ - stylelint (.stylelintrc is included if you wish to contribute please follow provided style)
+ - js-beautify (used in this projects deploy command)
+ - google-chrome (used to export the pdf, will not be packaged with this project)
+
+## Optional Dependencies
+
+ - hunspell (enables spellcheck on your resume at the commandline)
 
 
-**This project assumes you have a few packages installed globally**
+### Create a new resume data 
 
-Some packages are used at the commandline while developing your theme but are not required to run this package.  They are not included in the dependencies because most likely you should have these installed globally by now. This helps keep package size small and lets you worry about the project and so much setting up the tools to work on the project.
+Create a new resume.toml file from the example in the data folder 
 
+```
+cp data/resume.example.toml data/resume.toml
+```
 
 ### Install the command line
 
@@ -67,12 +74,14 @@ npm i
   - `export_file`    - index.html
   - `format`         - html
 
-Options are currently set using env variables, or added to the resume file itself. The only files you need to build and execute parts of the project are under the 'run' folder. As in "scripts are easier to run when they're files files".  They work the same way but its much easier to set flags and variables when you don't cram them all into the package.json file.
+Options are currently set using env variables, or added to the resume file itself. 
+
+All the files needed to build and run parts of the project are under the 'run' folder. The npm-scripts are easier to manage when they're files files instead of trying to fit them all into a single line of JSON code. They work exactly the same way but its allow for greater control over the environment flags and variables.
 
 
 ## Usage
 
-  -  start:       npm run sync && npm run templates:dev & npm run styles:dev & npm run serve"
+ -  start:        npm run sync && npm run templates:dev & npm run styles:dev & npm run serve
  -  build:        ./run/build  
  -  clean:        ./run/clean  
  -  deploy:       ./run/deploy   
@@ -83,9 +92,9 @@ Options are currently set using env variables, or added to the resume file itsel
  -  styles:lint:  ./run/styles-lint  
  -  templates:    ./run/templates  
  -  templates:dev ./run/templates-dev  
- -  meta:bump:    npm version patch -m "Increasing npm package version v%s"
- -  meta:release: npm version patch -m "Release: %s"
- -  env:          env | sort | grep npm"
+ -  meta:bump:    npm version patch -m "Increasing npm package version v%s"  
+ -  meta:release: npm version patch -m "Release: %s"  
+ -  env:          env | sort | grep npm"  
 
 
 
@@ -115,7 +124,7 @@ __"scriptname"__
 
   - make the name of the script and the entry in `package.json` the same.
   - It is not required but stricter naming rules keeps thigs simple
-  - script/command names should try to be short and one word. If needed use underscores to `seperate_longer_word` and `doNotMakeMe` have to type or try to read smashed together `camelCase` words.
+  - script/command names should try to be short and one word. If needed use underscores to `seperate_longer_word` and `doNotDoThis` camelCase should not be used for shell command line file names.
 
 __"script-variations"__
 
@@ -144,8 +153,9 @@ Template files are handlebars type, located in `templates/`
 
 Theme style files located in `assets/scss` and `styles.scss` is the main entry point.
 
+There is currently only one master template and theme, but the template is designed to be as modular as possible and the theme is organized in a way to allow for theme creation. Future versions of this package will allow for more options in choosing your layouts and theme colors.
 
-Build stylesheet files
+__Build stylesheet__
 
 ```
 npm run styles
