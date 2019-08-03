@@ -21,11 +21,11 @@ $sidebar_title_label_border          : 1px dashed;
 
 $sidebar_bg                          : desaturate(darken($theme_primary, 5%), 15%);
 $sidebar_color                       : #c6dacd;
-$sidebar_muted_color                 : lighten($color-secondary-1-1, 0%);
+$sidebar_muted_color                 : $color-secondary-1-1;
 
-$sidebar_banner_name_color           : $color-complement-2;
-$sidebar_banner_tagline_color        : $color-primary-1;
-$sidebar_title_color                 : $sidebar_muted_color;
+$sidebar_banner_name_color           : sidebar_color;
+$sidebar_banner_tagline_color        : darken($color-secondary-1-1,10%);
+$sidebar_title_color                 : $color-secondary-1-1;
 
 $sidebar_contact_card_bg             : $white;
 $sidebar_contact_card_color          : $capecod;
