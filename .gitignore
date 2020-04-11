@@ -49,3 +49,5 @@ typings/
 
 # default data source file 
 data/resume.toml
+
+\.build/

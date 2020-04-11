@@ -1,58 +1,13 @@
-
-// FONT VARIABLES
-// ----------------------------------------------
-$AsapCondensed:          'Asap Condensed', sans-serif;
-$chathura:               'Chathura', sans-serif;
-$FiraSansCondensed:      'Fira Sans Condensed', sans-serif;
-$FiraSansExtraCondensed: 'Fira Sans Extra Condensed', sans-serif;
-$librebarcode128text:    'libre-barcode-128-text', cursive;
-$opensans:               'open-sans', sans-serif;
-$opensanscondensed:      'open-sans-condensed', sans-serif;
-$oswald:                 'oswald', sans-serif;
-$roboto:                 'Roboto', sans-serif;
-$robotocondensed:        'Roboto Condensed', sans-serif;
-$sharetechmono:          'share-tech-mono', monospace;
-$sourcesanspro:          'source-sans-pro', sans-serif;
-
-
-// FONT-WEIGHT
-// ----------------------------------------------
-$fw_100: 100;
-$fw_200: 200;
-$fw_300: 300;
-$fw_400: 400;
-$fw_500: 500;
-$fw_600: 600;
-$fw_700: 700;
-$fw_800: 800;
-$fw_900: 900;
-
-@mixin add_font ($fontname, $fontfile, $weight:400) {
-
-  @include font-face('#{$fontname}', '../fonts/#{$fontfile}' );
-
-  .font-#{$fontname} {
-    font-family: $fontname;
-    &#{$weight} { font-family: $fontname; font-weight: $weight; }
-  }
-}
-
 // @import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:200,300,400,500,600,700&display=swap');
 // @import url('https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:100,200,300,400,500,600,700&display=swap');
 // @include font-face('fira-condensed-extra', '/assets/fonts/fira-condensed-extra', 200 700, normal, woff2);
 // @include font-face('fira-condensed', '/assets/fonts/fira-condensed', 200 700, normal, woff2);
-//
-
 // @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&display=swap');
 // @include font-face('open-sans-condensed', 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&display=swap');
 // @include add_font('open-sans-condensed', 'open-sans-condensed.woff', '300,700');
-
-
 // @import url('https://fonts.googleapis.com/css?family=Asap+Condensed:400,500,600,700&display=swap');
 // @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
-///
-// TODO: CREATE MIXIN AND FUNCTIONS TO GENERATE UTILITY CLASSES FROM INCLUDED FONTS
-//
+
 // .font-sharetechmono { font-family: $sharetechmono; }
 // @include font-face('share-tech-mono', '/assets/fonts/sharetechmono');
 // .font-sourcesanspro {
@@ -70,25 +25,8 @@ $fw_900: 900;
 //   &-700 { font-family: $roboto; font-weight: 700; }
 //   &-900 { font-family: $roboto; font-weight: 900; }
 // }
-//
 // .font-opensanscondensed {
 //   font-family: $opensanscondensed;
 //   &-300 { font-family: $opensanscondensed; font-weight: 300; }
 //   &-700 { font-family: $opensanscondensed; font-weight: 700; }
 // }
-
-
-@include font-face('libre-barcode-128-text', '/assets/fonts/librebarcode128text');
-.font-librebarcode128text { font-family: $librebarcode128text; }
-
-
-@include font-face('oswald', '/assets/fonts/oswald', 200 700, normal, woff2);
-.font-oswald {
-  font-family: $oswald;
-  &-200 { font-family: $oswald; font-weight: 200; }
-  &-300 { font-family: $oswald; font-weight: 300; }
-  &-400 { font-family: $oswald; font-weight: 400; }
-  &-500 { font-family: $oswald; font-weight: 500; }
-  &-600 { font-family: $oswald; font-weight: 600; }
-  &-700 { font-family: $oswald; font-weight: 700; }
-}

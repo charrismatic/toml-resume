@@ -9,12 +9,12 @@ $skill_row_margin_bottom       : 2px;
 $skill_row_margin_left         : 4px;
 $skillset_container_bg         : black;
 $skill_column_width            : percentage(1 / $skill_table_col_ct);
-$level_bar_pad                 : px2rem(2px);
-$level_bar_pad_px              :  2px;
+$skill_level_bar_pad                 : px2rem(2px);
+$skill_level_bar_pad_px              :  2px;
 $skill_title_color             : $title_color;
 $skill_title_font_size         : $page_content_fs;
 $skill_title_font_size_px      : rem2px($skill_title_font_size);
-$level_bar_h                   : $skill_title_font_size_px + $level_bar_pad_px + $level_bar_pad_px;
+$skill_level_bar_h                   : $skill_title_font_size_px + $skill_level_bar_pad_px + $skill_level_bar_pad_px;
 
 .skill_section {
   display: flex;
@@ -71,7 +71,7 @@ $level_bar_h                   : $skill_title_font_size_px + $level_bar_pad_px +
     position: relative;
 
     .levelbar {
-      height: ( $level_bar_h / 2);
+      height: ( $skill_level_bar_h / 2);
 
       &.proficiency_bar { background: $proficiency_bar_bg; }
       &.interest_bar { background: $skillinterest_bar_bg; }

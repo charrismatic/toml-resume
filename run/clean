@@ -4,10 +4,10 @@ BASE_DIR="$(npm prefix)"
 
 cd $BASE_DIR
 
-find .build -mindepth 1 -type f -exec rm {} \;
-find .build -mindepth 1 -type d -delete
-find .public -mindepth 1 -type f -exec rm {} \;
-find .public -mindepth 1 -type d -delete
+find .build -mindepth 1 -type f -print -exec rm {} \;
+find .build -mindepth 1 -type d -print -delete
+find .public -mindepth 1 -type f -print -exec rm {} \;
+find .public -mindepth 1 -type d -print -delete
 
 [[ ! -d .build ]] && mkdir .build
 [[ ! -d .public ]] && mkdir .public

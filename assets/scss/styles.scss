@@ -1,20 +1,22 @@
 
 // THIRD PARTY LIBRARIES
-@import 'vendor/fontawesome';
+// @import 'vendor/fontawesome';
 
 // STYLE LIBRARY
-@import 'charrismatic/colors/index';
-@import 'charrismatic/format/index';
-@import 'charrismatic/fonts/index';
-@import 'charrismatic/flex/index';
-@import 'charrismatic/effects/index';
+@import 'charrismatic/colors/library';
+@import 'charrismatic/fonts/library';
+@import 'charrismatic/flex/library';
+@import 'charrismatic/effects/library';
 
-// VARIABLE DEFINITIONS
-@import "defs/colors";
-@import "defs/fonts";
-@import "defs/typography";
 
-/// THEME CONFGURATION
+////
+/// ## THEME
+/// - CONFIGURES LIBRARY VARIABLES FOR LOCAL THEME
+/// - LOADS THEME SPECIFIC FUNCTIONS AND VARIABLES
+/// - STYLESHEET SHOULD NOT HAVE YIELDED
+///   CLASSES TO THE STYLESHEET AT THIS POINT
+/// ----------------------------------------------
+
 @import "theme/colors";
 @import "theme/functions";
 @import "theme/mixins";
@@ -22,17 +24,48 @@
 @import "theme/typography";
 @import "theme/layout";
 
+
+///                                           ///
+//   ## PRE-STYLESHEET OVERRIDE                //
+//   AN EMPTY OVERRIDE FILE IS INCLUDED FOR    //
+//   THEME AND LIBRARY VARIABLES OVERRIDES     //
+//   BEFORE MAIN STYLESHEET IS CREATED         //
+// --------------------------------------------//
+@import "override";
+
+
+////
+/// ## STYLESHEET
+/// - ENTRYPOINT INTO THE STYLESHEET FILE
+/// - ANY SPECIAL COMMENT HEADERS OR LICENSES CAN
+///   BE LOADED HERE FIRST.
+/// - FOLLOWED BY:
+///    * THE STYLESHEET ROOT CLASSES
+///    * RESET STYLES,
+///    * GENERAL LIBRARIES,
+///    * GERNERAL THEME CLASSES
+///    *  ... IN ORDER OF INCREASING SPECIFICITY
+/// ----------------------------------------------
+
+
 // STYLESHEET BASE
-@import "theme/base";
+@import "stylesheet/HEADER";
+@import "stylesheet/root";
+@import "stylesheet/base";
+@import 'charrismatic/colors/utility';
+@import 'charrismatic/fonts/utility';
+@import 'charrismatic/format/index';
+@import 'charrismatic/flex/utility';
+@import 'charrismatic/effects/utility';
+@import 'charrismatic/typography/utility';
+@import 'vendor/fontawesome';
 
 // BLOCK COMPONENTS
+@import "blocks/layout";
 @import "blocks/label";
 @import "blocks/group";
-@import "blocks/profile";
+@import "blocks/banner";
 @import "blocks/sidebar";
 @import "blocks/section";
 @import "blocks/job";
 @import "blocks/skill";
-
-// TESTING OR TEMPORARY/SINGLE USE CLASSES
-@import "overrides";

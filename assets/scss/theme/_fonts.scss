@@ -1,14 +1,135 @@
-/// ----------------------------------------------
-/// FONTS
-/// ----------------------------------------------
 
-$body_font                 : $oswald;
-$logo_font                 : $librebarcode128text;
-$code_font                 : $sharetechmono;
-$tech_font                 : $chathura;
-$document_main_font        : $oswald;
-$heading_font_main         : $chathura;
-$heading_font_secondary    : $opensanscondensed;
-$sidebar_header_title_font : $librebarcode128text;
-$document_main_font        : $librebarcode128text;
-$docunent_logo_font        : $librebarcode128text;
+// FONT FILE CONFIGURATION
+// ----------------------------------------------
+$fonts_path :      '/assets/fonts' !default;
+
+$font_set: (
+  // OSWALD SANS FONT
+  (name: 'oswald', style: 'normal', weight: 200, formats:('ttf', 'woff2'), file: "oswald_normal_200"),
+  (name: 'oswald', style: 'normal', weight: 300, formats:('ttf', 'woff2'), file: "oswald_normal_300"),
+  (name: 'oswald', style: 'normal', weight: 400, formats:('ttf', 'woff2'), file: "oswald_normal_400"),
+  (name: 'oswald', style: 'normal', weight: 500, formats:('ttf', 'woff2'), file: "oswald_normal_500"),
+  (name: 'oswald', style: 'normal', weight: 600, formats:('ttf', 'woff2'), file: "oswald_normal_600"),
+  (name: 'oswald', style: 'normal', weight: 700, formats:('ttf', 'woff2'), file: "oswald_normal_700"),
+  // HACK MONOSPACE FONT
+  (name: "hack", style: 'normal', weight: 400, formats:("woff", "woff2"), file: "hack_regular" ),
+  (name: "hack", style: 'normal', weight: 700, formats:("woff", "woff2"), file: "hack_bold" ),
+  (name: "hack", style: 'italic', weight: 400, formats:("woff", "woff2"), file: "hack_italic" ),
+  (name: "hack", style: 'italic', weight: 700, formats:("woff", "woff2"), file: "hack_bolditalic" ),
+  (name: "montserrat", style: "normal", weight: 400, formats: ("woff2"), file: "montserrat_normal_400"),
+  (name: "montserrat", style: "normal", weight: 100, formats: ("woff2"), file: "montserrat_normal_100"),
+  (name: "montserrat", style: "normal", weight: 200, formats: ("woff2"), file: "montserrat_normal_200"),
+  (name: "montserrat", style: "normal", weight: 300, formats: ("woff2"), file: "montserrat_normal_300"),
+  (name: "montserrat", style: "normal", weight: 500, formats: ("woff2"), file: "montserrat_normal_500"),
+  (name: "montserrat", style: "normal", weight: 600, formats: ("woff2"), file: "montserrat_normal_600"),
+  (name: "montserrat", style: "normal", weight: 700, formats: ("woff2"), file: "montserrat_normal_700"),
+  (name: "montserrat", style: "normal", weight: 800, formats: ("woff2"), file: "montserrat_normal_800"),
+  (name: "montserrat", style: "normal", weight: 900, formats: ("woff2"), file: "montserrat_normal_900"),
+);
+
+// FONT VARIABLES
+// ----------------------------------------------
+$BODY_FONT    : "oswald";
+$MONO_FONT    : "hack";
+$HEADING_FONT : "hack";
+$LOGO_FONT    : "oswald";
+
+// FONT-WEIGHT
+// ----------------------------------------------
+$fw_100: 100;
+$fw_200: 200;
+$fw_300: 300;
+$fw_400: 400;
+$fw_500: 500;
+$fw_600: 600;
+$fw_700: 700;
+$fw_800: 800;
+$fw_900: 900;
+
+
+//Font Weights
+@function _font_wt($input) {
+  $font_wt_map: (
+    "superthin": 100,
+    "thin":      200,
+    "light":     300,
+    "regular":   400,
+    "medium":    500,
+    "semibold":  600,
+    "bold":      700,
+    "extrabold": 800,
+    "superbold": 900,
+  );
+
+  @return map_get($font_wt_map, $input);
+}
+
+
+@mixin font-face($name, $path, $weight: false, $style: false, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_")
+  );
+  $formats: (otf: "opentype", ttf: "truetype");
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    src: $src;
+
+    @if $weight { font-weight: $weight; }
+
+    @if $style { font-style: $style; }
+  }
+}
+
+
+@mixin add_font ($font_name, $font_filename, $font_weight:400, $font_style:normal, $font_formats: eot woff2 woff ttf svg) {
+  @include font-face(
+    "#{$font_name}",
+    "#{$font_filename}",
+    $font_weight,
+    $font_style,
+    $font_formats
+  );
+
+  .font-#{$font_name} {
+    &#{$font_weight} {
+      font-family: $font_name;
+      font-weight: $font_weight;
+    }
+  }
+}
+
+@mixin add_font_set ($font_set) {
+  @each $font_file in $font_set {
+    $font_name: map-get($font_file, name);
+    $font_style: map-get($font_file, style);
+    $font_weight: map-get($font_file, weight);
+    $font_formats: map-get($font_file, formats);
+    $font_filename: map-get($font_file, file);
+
+    @include font-face(
+      "#{$font_name}",
+      "#{$fonts_path}/#{$font_filename}",
+      $font_weight,
+      $font_style,
+      $font_formats
+    );
+
+    .font-#{$font_name}-#{$font_weight} {
+      font-family: $font_name;
+      font-weight: $font_weight;
+      font-style: $font_style;
+    }
+  }
+}
+
+
+@include add_font_set($font_set);

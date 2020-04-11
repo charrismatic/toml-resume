@@ -1,0 +1,41 @@
+$banner_title_fs             : 2rem;
+$banner_title_wt             : $text_normal;
+$banner_title_font           : var(--logo-font);
+$banner_title_color          : var(--logo-color);
+$banner_tagline_color        : var(--subtitle-color);
+$banner_tagline_wt           : $text_normal;
+$banner_tagline_fs           : 1rem;
+$banner_tagline_spacing      : -.5px;
+
+
+.banner {
+  &_section {
+    display: flex;
+    flex-grow: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+    text-align: left;
+    align-items: start;
+    justify-content: left;
+  }
+
+  &__title {
+    font-size: $banner_title_fs;
+    font-family: $banner_title_font;
+    font-weight: $banner_title_wt;
+    color: $banner_title_color;
+    padding-bottom: 1rem;
+  }
+
+  &__tagline {
+    color: $banner_tagline_color;
+    font-weight: $banner_tagline_wt;
+    font-size: $banner_tagline_fs;
+    letter-spacing: $banner_tagline_spacing;
+  }
+
+  &__img { max-width: 100%; }
+}

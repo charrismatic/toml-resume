@@ -1,0 +1,28 @@
+
+$sidebar_width : 240px;
+
+.main {
+  padding: 3rem;
+  flex: 1;
+
+  .project-title {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .projects-section {
+    .intro { margin-bottom: 30px; }
+    .item { margin-bottom: 15px; }
+  }
+}
+
+.sidebar {
+  width: $sidebar_width;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+}

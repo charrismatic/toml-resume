@@ -1,83 +1,30 @@
 
-$secondary_text_xl             :  1.2rem;
-$secondary_text_lg             :  1.1rem;
-$secondary_text_md             :  0.9rem;
-$secondary_text_sm             :  0.8rem;
+// ==============================================
+// TYPOGRAPHY - SIZE AND STYLE
+// ----------------------------------------------
 
-$text_highlight_color          : $theme_primary_complement;
+$BODY_SIZE                : 16px;
 
+$text_default             : 1em;
+$text_default_size        : 1rem;
+$default_text_size        : 1rem;
+$base_textsize            : 1rem;
+$initial_text_size        : $base_textsize;
+$text_default_lineheight  : 1.7;
+$text_xs                  : 0.8rem;
+$text_sm                  : 0.8rem;
+$text_md                  : 1;
+$text_lg                  : 1;
+$text_xl                  : 1;
+$secondary_text_xl             : 1.2rem;
+$secondary_text_lg             : 1.1rem;
+$secondary_text_md             : 0.9rem;
+$secondary_text_sm             : 0.8rem;
 $text_light                    : $fw_100;
 $text_normal                   : $fw_300;
 $text_semibold                 : $fw_500;
 $text_heavy                    : $fw_600;
-
-$base_textsize                 : 1rem;
 $document_title_fw             : $fw_300;
-$initial_text_size             : $base_textsize;
 $main_content_text_larger      : ($base_textsize * .9);
 $page_content_fs               : ($base_textsize * .8);
 $main_content_text_smaller     : ($base_textsize * .7);
-
-
-h1 { line-height: unset; margin: unset; font-size: unset; }
-h1 { line-height: unset; margin: unset; font-size: unset; }
-h3 { line-height: unset; margin: unset; font-size: unset; }
-h4 { line-height: unset; margin: unset; font-size: unset; }
-h5 { line-height: unset; margin: unset; font-size: unset; }
-h6 { line-height: unset; margin: unset; font-size: unset; }
-
-body {
-  font-family: $body_font;
-  font-size: $default_text_body_text;
-  font-weight: inital;
-}
-
-span.highligher {
-  position: relative;
-  z-index: 3;
-  display: block;
-  padding: 3px 6px;
-  letter-spacing: 5px;
-  font-size: 7.4rem;
-  margin-bottom: 6px;
-
-  &::after {
-    content: "";
-    z-index: -1;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: $text_highlight_color;
-    display: block;
-    height: 100%;
-  }
-}
-
-p { line-height: 1.5; }
-
-.list-unstyled { list-style: none; }
-
-a {
-  color: inherit;
-  text-decoration: inherit;
-  @include transition (all 0.4s ease-in-out);
-
-  &:focus { text-decoration: none; }
-
-  &:hover {
-    text-decoration: underline;
-    position: relative;
-
-    &::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background: rgba(0, 0, 0, .1);
-    }
-  }
-}

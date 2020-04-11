@@ -9,7 +9,6 @@ echo "DEPLOY_VERSION $DEPLOY_VERSION"
 [[ ! -d .build ]] && mkdir .build
 
 $BASE_DIR/run/clean
-
 $BASE_DIR/run/sync-assets
 $BASE_DIR/run/templates txt
 $BASE_DIR/run/templates md
@@ -20,12 +19,9 @@ mv .public ".build/$BUILD_TIME"
 
 [[ ! -d .public ]] && mkdir .public
 [[ ! -d .dist ]] && mkdir .dist
-[[ ! -d .dist/$DEPLOY_VERSION ]] && mkdir ".dist/$DEPLOY_VERSION"
-[[ -d .dist/$DEPLOY_VERSION ]] && find ".dist/$DEPLOY_VERSION" -type f -delete
-
-mv ".build/$BUILD_TIME/assets" ".dist/$DEPLOY_VERSION/"
-mv ".build/$BUILD_TIME/resume.md" ".dist/$DEPLOY_VERSION/"
-mv ".build/$BUILD_TIME/resume.txt" ".dist/$DEPLOY_VERSION/"
+[[ ! -d .dist/releases/$DEPLOY_VERSION ]] && mkdir ".dist/releases/$DEPLOY_VERSION"
+[[ -d .dist/releases/$DEPLOY_VERSION ]] && find ".dist/releases/$DEPLOY_VERSION" -type f -delete
+[[ -d .dist/releases/$DEPLOY_VERSION ]] && find ".dist/releases/$DEPLOY_VERSION" -type d -delete
 
 # js-beautify --type html \
 #   --indent-size 2 \
@@ -42,15 +38,17 @@ html-beautify \
   --extra_liners="" \
   --unformatted="style" \
   --file ".build/$BUILD_TIME/index.html" \
-  --outfile  ".dist/$DEPLOY_VERSION/index.html"
-
-
+  --outfile ".dist/releases/$DEPLOY_VERSION/index.html"
 
 google-chrome \
   --headless \
   --disable-gpu \
-  --print-to-pdf "$BASE_DIR/.dist/$DEPLOY_VERSION/index.html"
+  --print-to-pdf "$BASE_DIR/.dist/releases/$DEPLOY_VERSION/index.html"
 
-mv ".build/$BUILD_TIME/assets" ".dist/$DEPLOY_VERSION/"
+[[ -f ./output.pdf ]] && mv ./output.pdf ".dist/releases/$DEPLOY_VERSION/resume.pdf"
+
+mv ".build/$BUILD_TIME/assets" ".dist/releases/$DEPLOY_VERSION/"
+mv ".build/$BUILD_TIME/resume.md" ".dist/releases/$DEPLOY_VERSION/"
+mv ".build/$BUILD_TIME/resume.txt" ".dist/releases/$DEPLOY_VERSION/"
 
 exit 0

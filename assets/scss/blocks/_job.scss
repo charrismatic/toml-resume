@@ -1,20 +1,15 @@
 
-$job_title_fs           : 0.9rem;
-$job_title_weight       : $text_semibold;
+$job_title_fs            : 0.9rem;
+$job_title_weight        : $text_semibold;
+$job_title_bg            : transparent;
+$job_title_color         : var(--primary);
+$job_title_border        : 1px dashed $transparent_darker_20;
+$job_company_bg          : $theme_accent_color;
+$job_company_color       : $page_bg;
+$job_label_year_color    : $page_bg;
+$job_label_year_border   : var(--primary);
+$job_label_year_bg       : var(--primary);
 
-$job_title_bg           : $transparent;
-$job_title_color        : $text_heading_color;
-$job_company_bg         : $theme_accent_color;
-$job_company_color      : $text_heading_color;
-
-$job_label_year_color   : $page_bg;
-$job_label_year_border  : rgba($theme_primary, .3);
-$job_label_year_bg      : $text_heading_color;
-
-
-///
-/// PAGE 1
-///
 .job {
   padding: 0.5rem 0;
   font-size: $default_text_size;
@@ -33,14 +28,14 @@ $job_label_year_bg      : $text_heading_color;
     background-color: $job_title_bg;
     font-size: $job_title_fs;
     font-weight: $job_title_weight;
+    border-bottom: $job_title_border;
     padding: 0.3em 0;
     margin-top: 0;
     margin-bottom: 0;
   }
 
   &__company {
-    @include depth("1");
-
+    // @include depth("1");
     margin: 0;
     background: $job_company_bg;
     color: $job_company_color;
@@ -52,7 +47,6 @@ $job_label_year_bg      : $text_heading_color;
   &__introduction {
     text-align: left;
     flex: 1;
-    color: lighten($body_color, 10%);
     text-transform: lowercase;
     margin-left: 0.5rem;
   }

@@ -2,90 +2,66 @@
   text-shadow: $string;
 }
 @mixin box-shadow ($string) {
-  -webkit-box-shadow: $string;
   box-shadow: $string;
 }
 
 @mixin box-sizing ($type: border-box) {
-  -webkit-box-sizing: $type;
   box-sizing: $type;
 }
 
 @mixin border-radius ($radius: 5px) {
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  -webkit-border-radius: $radius;
   border-radius: $radius;
 }
 
 @mixin border-radiuses ($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
-  -webkit-border-top-right-radius: $topright;
   border-top-right-radius: $topright;
-  -webkit-border-bottom-right-radius: $bottomright;
   border-bottom-right-radius: $bottomright;
-  -webkit-border-bottom-left-radius: $bottomleft;
   border-bottom-left-radius: $bottomleft;
-  -webkit-border-top-left-radius: $topleft;
   border-top-left-radius: $topleft;
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
 
 @mixin opacity ($opacity: 0.5) {
-  -webkit-opacity: $opacity;
   opacity: $opacity;
 }
 
 @mixin gradient ($startColor: #eee, $endColor: white) {
   background-color: $startColor;
-  background: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
-  background: -webkit-linear-gradient(top, $startColor, $endColor);
 }
 @mixin horizontal-gradient ($startColor: #eee, $endColor: white) {
    background-color: $startColor;
-  background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
-  background-image: -webkit-linear-gradient(left, $startColor, $endColor);
 }
 
 @mixin animation ($name, $duration: 300ms, $delay: 0, $ease: ease) {
-  -webkit-animation: $name $duration $delay $ease;
   animation: $name $duration $delay $ease;
 }
 
 @mixin transition ($transition) {
-  -webkit-transition: $transition;
   transition: $transition;
 }
 @mixin transform($string){
-  -webkit-transform:  $string;
   transform:  $string;
 }
 @mixin scale ($factor) {
-  -webkit-transform: scale($factor);
   transform: scale($factor);
 }
 @mixin rotate ($deg) {
-  -webkit-transform: rotate($deg);
   transform: rotate($deg);
 }
 @mixin skew ($deg, $deg2) {
-  -webkit-transform: skew($deg, $deg2);
   transform: skew($deg, $deg2);
 }
 @mixin translate ($x, $y:0) {
-  -webkit-transform: translate($x, $y);
   transform: translate($x, $y);
 }
 @mixin translate3d ($x, $y: 0, $z: 0) {
-  -webkit-transform: translate3d($x, $y, $z);
   transform: translate3d($x, $y, $z);
 }
 @mixin perspective ($value: 1000) {
-  -webkit-perspective:   $value;
   perspective:     $value;
 }
 @mixin transform-origin ($x:center, $y:center) {
-  -webkit-transform-origin: $x $y;
   transform-origin: $x $y;
 }
 
@@ -105,7 +81,6 @@
 }
 
 @mixin background-size ($string: contain) {
-    -webkit-background-size: $string;
     background-size: $string;
 }
 

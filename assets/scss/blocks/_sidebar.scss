@@ -1,44 +1,39 @@
-$sidebar_xl                          : 1.2rem;
-$sidebar_lg                          : 1.1rem;
-$sidebar_md                          : 0.9rem;
-$sidebar_sm                          : 0.8rem;
-$sidebar_text_xl                     : 1.2rem;
-$sidebar_text_lg                     : 1.1rem;
-$sidebar_text_md                     : 0.9rem;
-$sidebar_text_sm                     : 0.8rem;
+
+// COLOR SIDEBAR
+$sidebar_bg                          : $theme_primary;
+$sidebar_color                       : $page_bg;
+
+// CLEAR SIDEBAR
+$sidebar_bg                          : transparent;
+$sidebar_color                       : var(--primary);
+
+$sidebar_lighter_color               : var(--lighter);
+$sidebar_darker_color                : var(--darker);
+
+$sidebar_text                        : $text_default_size;
+$sidebar_text_sm                     : ($text_default_size * 0.8);
+$sidebar_text_md                     : ($text_default_size * 0.9);
+$sidebar_text_lg                     : ($text_default_size * 1.1);
+$sidebar_text_xl                     : ($text_default_size * 1.2);
 $sidebar_section_content_lh          : 1.7;
 $sidebar_section_title_fw            : $fw_300;
+$sidebar_section_title_border        : 1px dashed $transparent_darker_20;
 $sidebar_section_content_fw          : $fw_300;
+$sidebar_contactlist_spacing         : 1px;
 
-$sidebar_banner_name_font            : $logo_font;
-$sidebar_banner_name_fs              :  3.4rem;
-$sidebar_banner_name_wt              : $text_normal;
-$sidebar_banner_tagline_fs           : 1.5rem;
-$sidebar_banner_tagline_spacing      : -.5px;
-$sidebar_banner_tagline_wt           : $text_normal;
 
-$sidebar_title_label_border          : 1px dashed;
-
-$sidebar_bg                          : desaturate(darken($theme_primary, 5%), 15%);
-$sidebar_color                       : #c6dacd;
-$sidebar_muted_color                 : lighten($color-secondary-1-1, 0%);
-
+$sidebar_lighter_color                 : lighten($color-secondary-1-1, 0%);
 $sidebar_banner_name_color           : $color-complement-2;
 $sidebar_banner_tagline_color        : $color-primary-1;
-$sidebar_title_color                 : $sidebar_muted_color;
-
+$sidebar_title_color                 : $sidebar_lighter_color;
 $sidebar_contact_card_bg             : $white;
 $sidebar_contact_card_color          : $capecod;
 $sidebar_contact_card_icon_color     : rgba(lighten($capecod, 5%), 0.8);
-$sidebar_header_subtitle_bg          : $transparent;
-$sidebar_title_label_bg              : $transparent;
-$sidebar_banner_tagline_bg           : $transparent;
-
 
 .sidebar {
   color: $sidebar_color;
-  background: $sidebar_bg;
-  font-size: $sidebar_text_md;
+  background-color: $sidebar_bg;
+  font-size: $sidebar_text;
   padding-top: 2rem;
   padding-bottom: 4rem;
 
@@ -54,46 +49,29 @@ $sidebar_banner_tagline_bg           : $transparent;
     text-transform: uppercase;
     font-size: $sidebar_text_lg;
     font-weight: $sidebar_section_title_fw;
-    color: $sidebar_muted_color;
+    color: $sidebar_lighter_color;
     width: 100%;
 
     &.tagged {
       font-size: $sidebar_text_md;
-      border: 1px dashed;
+      border-bottom: $sidebar_section_title_border;
       display: inline-block;
       font-weight: $fw_400;
       width: 100%;
-      margin-top: 2rem;
-      margin-bottom: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: .5rem;
       margin-left: -.2rem;
       padding-left: .2rem;
       padding-right: 0;
       text-transform: lowercase;
-      padding-bottom: 2px;
     }
   }
 
-  .banner_section {
-    display: flex;
-    flex-grow: 0;
-    padding-top: 1rem;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 1rem;
-    position: relative;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .tagline_section {
-    display: flex;
-    padding-bottom: 1rem;
-    justify-content: center;
-    align-items: center;
-    margin-left: 0;
-    margin-right: 0;
-    text-align: center;
+  .block__content {
+    font-size: $sidebar_text;
+    color: inherit;
+    font-family: inherit;
   }
 
   .contact_list,
@@ -107,26 +85,10 @@ $sidebar_banner_tagline_bg           : $transparent;
     }
   }
 
-  .banner {
-    &__name {
-      font-size: $sidebar_banner_name_fs;
-      font-family: $sidebar_banner_name_font;
-      font-weight: $sidebar_banner_name_wt;
-      color: $sidebar_banner_name_color;
-    }
-
-    &__tagline {
-      color: $sidebar_banner_tagline_color;
-      font-weight: $sidebar_banner_tagline_wt;
-      font-size: $sidebar_banner_tagline_fs;
-      letter-spacing: $sidebar_banner_tagline_spacing;
-    }
-    &__img { max-width: 100%; }
-  }
-
   .contact_list {
     list-style: none;
-    font-family: $heading_font_secondary;
+    font-family: var(--mono-font);
+    font-weight: 300;
     padding: 0;
     margin: 0;
     line-height: 1.5;
@@ -135,8 +97,9 @@ $sidebar_banner_tagline_bg           : $transparent;
       &_item {
         color: inherit;
         font-family: inherit;
+        font-weight: inherit;
         margin-bottom: $spacing_third;
-        font-size: $text_default;
+        font-size: $sidebar_text;
 
         &:last-child { margin-bottom: 0; }
       }
@@ -150,8 +113,9 @@ $sidebar_banner_tagline_bg           : $transparent;
         font-family: inherit;
         text-decoration: none;
         font-size: .85rem;
+        font-weight: inherit;
         color: inherit;
-        letter-spacing: 1.5px;
+        letter-spacing: $sidebar_contactlist_spacing;
       }
     }
 
@@ -159,6 +123,7 @@ $sidebar_banner_tagline_bg           : $transparent;
       font-size: 0.8rem;
       letter-spacing: 0;
       font-family: monospace;
+      font-weight: inherit;
     }
   }
 
@@ -178,7 +143,7 @@ $sidebar_banner_tagline_bg           : $transparent;
 
         &__info {
           display: flex;
-          color: $sidebar_muted_color;
+          color: $sidebar_lighter_color;
           font-size: $sidebar_text_sm;
           margin: 0.5em 0;
           justify-content: space-between;
@@ -198,5 +163,12 @@ $sidebar_banner_tagline_bg           : $transparent;
         }
       }
     }
+  }
+
+  .interests-list {
+    font-size: $sidebar_text_md;
+    color: inherit;
+    text-transform: lowercase;
+    font-family: inherit;
   }
 }

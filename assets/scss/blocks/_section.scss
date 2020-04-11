@@ -2,37 +2,35 @@
 $show_section_title: true;
 
 $section_title_display: none;
+
 @if ($show_section_title) {
   $section_title_display: block;
 }
 
-$section_title_size            :  $text_default_size;
-$section_content_text_size     :  0.8rem;
-$section_title_effect          :  lowercase;
-$section_title_wt              :  $fw_300;
-
-$section_title_border          : 1px dashed lighten($capecod, 20%);
+$section_title_size            : $text_default_size;
+$section_content_text_size     : 0.8rem;
+$section_title_effect          : lowercase;
+$section_title_wt              : $fw_300;
 $section_title_color           : $title_color;
-$section_title_bg              : $page_bg;
-$highlighted_section_bg        : desaturate(darken($theme_primary, 0%), 15%);
-$highlighted_section_color     : $color-complement-2;
-
+$section_title_bg              : $transparent_darker_05;
+$section_title_border          : initial;
 
 .section {
   font-size: $default_text_size;
   margin-bottom: $spacing_full;
 
   &__title {
-    display: $section_title_display;
     position: relative;
+    display: $section_title_display;
     font-weight: $section_title_wt;
     font-size: $section_title_size;
     text-transform: $section_title_effect;
     background: $section_title_bg;
     color: $section_title_color;
-    border: $section_title_border;
-    margin-left: ($spacing_third * -1);
+    border-bottom: $section_title_border;
     margin-bottom: $spacing_half;
+    padding-bottom: $spacing_third;
+    margin-left: ($spacing_third * -1);
     padding-left: $spacing_third;
     margin-top: 0;
   }

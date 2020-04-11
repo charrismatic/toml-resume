@@ -1,0 +1,72 @@
+
+
+
+:root {
+
+  // BODY
+  // ----------------------------------------------
+  --body-size: #{$BODY_SIZE};
+  --body-color: #{$BODY_COLOR};
+  --body-bg: #{$BODY_BG};
+
+  // FONTS
+  // ----------------------------------------------
+  --body-font: "#{$BODY_FONT}";
+  --heading-font: "#{$HEADING_FONT}";
+  --mono-font: "#{$HEADING_FONT}";
+  --logo-font: "#{$LOGO_FONT}";
+
+  // ----------------------------------------------
+  --primary: #{$theme_primary};
+  --lighter: #{$theme_primary_lighter};
+  --darker: #{$theme_primary_darker};
+  --inverse: #{$theme_primary_invert};
+  --complementary: #{$theme_primary_complement};
+
+  //
+  --highlight: #{$HIGHLIGHT};
+  --secondary: #{$SECONDARY};
+
+  @each $color, $value in $theme_colors {
+    --#{$color}: #{$value};
+  }
+
+  --red-100: #{$RED_100};
+  --red-200: #{$RED_200};
+  --red-300: #{$RED_300};
+  --red-400: #{$RED_400};
+  --red-500: #{$RED_500};
+  --red-600: #{$RED_600};
+  --grn-200: #{$GRN_200};
+  --grn-300: #{$GRN_300};
+  --grn-400: #{$GRN_400};
+  --grn-500: #{$GRN_500};
+  --grn-600: #{$GRN_600};
+  --blu-200: #{$BLU_200};
+  --blu-300: #{$BLU_300};
+  --blu-400: #{$BLU_400};
+  --blu-500: #{$BLU_500};
+  --blu-600: #{$BLU_600};
+  --yel-200: #{$YEL_200};
+  --yel-300: #{$YEL_300};
+  --yel-400: #{$YEL_400};
+  --yel-500: #{$YEL_500};
+  --yel-600: #{$YEL_600};
+  --gra-200: #{$GRA_200};
+  --gra-300: #{$GRA_300};
+  --gra-400: #{$GRA_400};
+  --gra-500: #{$GRA_500};
+  --gra-600: #{$GRA_600};
+  --black: #{$BLACK};
+  --message-primary: #{$MESSAGE_PRIMARY};
+  --message-secondary: #{$MESSAGE_SECONDARY};
+  --message-success: #{$MESSAGE_SUCCESS};
+  --message-danger: #{$MESSAGE_DANGER};
+  --message-warning: #{$MESSAGE_WARNING};
+  --message-info: #{$MESSAGE_INFO};
+
+
+  // @each $bp, $value in $grid-breakpoints {
+  //   --breakpoint-#{$bp}: #{$value};
+  // }
+}
