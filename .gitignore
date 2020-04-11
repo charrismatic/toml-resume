@@ -51,3 +51,5 @@ typings/
 data/resume.toml
 
 \.build/
+
+assets/font-library/

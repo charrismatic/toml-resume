@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-weight: 300;
+  font-style: normal;
+  src: url('#{$fonts_path}/opensans-condlight.eot');
+  src: url('#{$fonts_path}/opensans-condlight.eot?#iefix') format('embedded-opentype'),
+       url('#{$fonts_path}/opensans-condlight.woff') format('woff'),
+       url('#{$fonts_path}/opensans-condlight.ttf') format('truetype'),
+       url('#{$fonts_path}/opensans-condlight.svg#OpenSansCondensedLight') format('svg');
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-weight: 300;
+  font-style: italic;
+  src: url('#{$fonts_path}/opensans-condlightitalic.eot');
+  src: url('#{$fonts_path}/opensans-condlightitalic.eot?#iefix') format('embedded-opentype'),
+       url('#{$fonts_path}/opensans-condlightitalic.woff') format('woff'),
+       url('#{$fonts_path}/opensans-condlightitalic.ttf') format('truetype'),
+       url('#{$fonts_path}/opensans-condlightitalic.svg#OpenSansCondensedLightItalic') format('svg');
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-weight: bold;
+  font-style: normal;
+  src: url('#{$fonts_path}/opensans-condbold.eot');
+  src: url('#{$fonts_path}/opensans-condbold.eot?#iefix') format('embedded-opentype'),
+       url('#{$fonts_path}/opensans-condbold.woff') format('woff'),
+       url('#{$fonts_path}/opensans-condbold.ttf') format('truetype'),
+       url('#{$fonts_path}/opensans-condbold.svg#OpenSansCondensedBold') format('svg');
+}
