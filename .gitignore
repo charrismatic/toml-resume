@@ -53,3 +53,4 @@ data/resume.toml
 \.build/
 
 assets/font-library/
+data/resume.toml.bak
