@@ -1,6 +1,6 @@
 {
   "name": "toml-resume",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "use Toml file and command line tools to build your resume",
   "author": "Matt Harris",
   "keywords": [
