@@ -7,7 +7,7 @@ BASE_DIR="$(npm prefix)"
 # echo -e "\n\nwith RUN_FLAGS $RUN_FLAGS\n\n"
 
 RUNNODE_FLAGS="--verbose $RUN_FLAGS"
-RUNSCRIPT_FLAGS=""
+RUNSCRIPT_FLAGS="${*}"
 
 # OPTIONS
 # echo -e "\n\nwith RUN_FLAGS $RUN_FLAGS\n\n"

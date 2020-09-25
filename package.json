@@ -37,6 +37,7 @@
   "dependencies": {
     "browser-sync": "^2.26.7",
     "handlebars": "^4.7.6",
+    "minimist": "^1.2.5",
     "node-sass": "^4.13.1",
     "nodemon": "^1.19.4",
     "toml": "^3.0.0"
