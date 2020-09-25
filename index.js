@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+var argv = require('minimist')(process.argv.slice(2), {
+  string: [ 'format' ],
+});
+
+
 const renderHtml = require('./lib/render_html')
 const renderTxt = require('./lib/render_txt')
 const renderMd = require('./lib/render_md')
@@ -43,7 +48,16 @@ const parse_options = () => {
     runtime_options = '{}'
   }
 
-  options = Object.assign(Object.create(null), defaults, JSON.parse(runtime_options))
+  options = Object.assign(
+    Object.create(null),
+    defaults,
+    JSON.parse(runtime_options),
+    argv
+  )
+
+  if (options.format === 'md') {
+    options.export_file = 'resume.md'
+  }
 
   if (options.debug) {
     debug_log('Process env:')
@@ -68,20 +82,24 @@ if (options.resume_format === 'json') {
 
 debug_log(resume)
 
-if (options.format === 'html') {
-  rendered = renderHtml(resume)
-  exportHtml(rendered, options)
+function main(){
+  if (options.format === 'html') {
+    rendered = renderHtml(resume)
+    exportHtml(rendered, options)
+  }
+
+  else if (options.format === 'md') {
+    rendered = renderMd(resume)
+    exportMd(rendered, options)
+  }
+
+  else if (options.format === 'txt') {
+    rendered = renderTxt(resume)
+    exportTxt(rendered, options)
+  }
+
+  if (options.console_output) console.log(rendered)
+  debug_log(options)
 }
 
-else if (options.format === 'md') {
-  rendered = renderMd(resume)
-  exportMd(rendered, options)
-}
-
-else if (options.format === 'txt') {
-  rendered = renderTxt(resume)
-  exportTxt(rendered, options)
-}
-
-if (options.console_output) console.log(rendered)
-debug_log(options)
+main()
