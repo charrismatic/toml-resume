@@ -1,0 +1,133 @@
+---
+date:
+name: {{resume.basics.name}}
+meta:
+---
+{{#resume ~}}
+{{!-- INTRODUCTION --}}
+
+{{#basics}}
+# {{name}}
+
+> {{tagline}}
+
+{{summary}}
+
+## Contact
+
+Phone: {{phone}}
+
+Email: {{email}}
+
+Website: {{website}}
+
+{{#if profiles}}
+{{#each profiles}}
+{{network}}: {{url}}
+
+{{/each}}
+{{/if}}
+Address:
+
+    {{../address.street}}
+    {{../address.city}}, {{../address.state }} {{../address.postalCode }}
+{{/basics}}
+
+## Education
+{{#education}}
+
+- __{{institution}}__
+
+  {{studyType}} {{area}}
+  {{startDate}} - {{endDate}}
+{{/education}}
+
+{{!-- WORK EXPERIENCE --}}
+## Work Experience
+{{#work}}
+
+### {{name}} *({{url}})*
+
+> {{summary}}
+
+{{#if position}}Position: {{position}}{{/if ~}}
+Start: {{startDate}}
+End: {{endDate}}
+
+{{#highlights}}
+  * {{.}}
+{{/highlights ~}}
+
+{{#if display ~}}
+{{!--
+{{#if name }}
+{{#if url ~}}[{{~ name ~}}](https://{{url}}){{else}} {{~ name ~}}{{/if ~}}
+{{/if ~}}
+--}}
+{{#if roles}}
+{{#each roles}}
+{{#unless hide}}
+{{#if title}}
+#### {{title}}
+{{/if ~}}
+{{#if summary}}{{summary}}{{/if}}
+{{#if responsibilities}}
+{{#each responsibilities}}
+- {{this}}
+{{/each ~}}
+{{/if ~}}
+{{/unless ~}}
+{{/each}}
+{{/if}}
+
+     {{#if highlights}}
+     {{#each highlights}}
+       - {{this}}
+     {{/each}}
+     {{/if ~}}
+  {{/if}}
+{{/work}}
+{{#work2}}
+### {{name}} *({{url}})*
+
+> {{summary}}
+
+{{#if position}}Position: {{position}}{{/if ~}}
+Start: {{startDate}}
+End: {{endDate}}
+
+{{#if display ~}}
+{{#if roles}}
+{{#each roles}}
+{{#unless hide}}
+{{#if title}}
+
+#### {{title}}
+{{/if }}
+{{#if summary}}{{summary}}{{/if}}
+{{#if responsibilities}}
+{{#each responsibilities}}
+- {{this}}
+{{/each ~}}
+{{/if ~}}
+{{/unless}}
+{{/each}}
+{{/if}}
+{{/if}}
+{{/work2}}
+
+{{#if publications}}
+## Presentations & Publications
+
+{{#publications}}
+{{#if display ~}}
+- {{#if event}}__{{event}}__{{/if ~}}
+  {{#if title}} '{{title}}' {{/if ~}}
+  {{#if type}}- {{type}} {{/if ~}}
+  {{#if location}}{{location}}{{/if ~}}
+  {{#if date}} *\[{{date}}\]* {{/if}}
+{{/if}}
+{{/publications}}
+{{/if}}
+
+{{/resume}}
